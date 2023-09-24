@@ -1,12 +1,11 @@
 const express = require("express")
-const controller = require("./user.controller")
+const middleware = require("./middleware.user")
+const controller = require("./controler.user")
 
+const userRouter = express.Router();
 
-const userRouter = express.Router()
+userRouter.post("/signUp", middleware.validateUser, controller.createUser)
 
-userRouter.get("/", controller.getUsers)
-userRouter.post("/signup", middleware.validateUser, controller.createUser)
-userRouter.post("/login", middleware.validateUser, controller.createUser)
-
+userRouter.post("/login", middleware.validateLogInfo, controller.login)
 
 module.exports = userRouter
