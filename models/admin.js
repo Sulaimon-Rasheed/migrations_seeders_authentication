@@ -15,7 +15,7 @@ const adminSchema = new Schema({
         type:String,
         required:true
     },
-    userInfo:[{type:Schema.Types.ObjectId, ref:"users"}]
+    user_id:[{type:Schema.Types.ObjectId, ref:"users"}]
 })
 
 module.exports = mongoose.model("admins", adminSchema)

@@ -1,15 +1,8 @@
 const mongoose = require("mongoose");
-// const shortid = require("shortid")
 const bcrypt = require("bcrypt");
 
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
-  // _id:{
-  //     type:String,
-  //     default:shortid.generate,
-  //     autoIncrement:true,
-  //     unique:true
-  // },
   username: { type: String },
   password: { type: String, unique: true },
   email: { type: String, unique: true },

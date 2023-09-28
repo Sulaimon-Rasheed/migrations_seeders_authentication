@@ -1,5 +1,4 @@
 const seeder = require("mongoose-seed");
-// require("dotenv").config();
 const path = require("path")
 
 const data = [
