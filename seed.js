@@ -25,7 +25,7 @@ const filePath = path.join(__dirname, "models", "admin.js")
 
 seeder.connect(process.env.DB_URL, () => {
   seeder.loadModels([filePath]);
-  seeder.clearModels(["user"]);
+  seeder.clearModels(["admin"]);
   seeder.populateModels(data, (err, done) => {
     if (err) {
       console.log("seed err", err);
