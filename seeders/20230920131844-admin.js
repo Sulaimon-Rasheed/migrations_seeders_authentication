@@ -4,8 +4,9 @@
 const fields = [
   {
     email:"get4me@gmail.com",
-    firstName:"Moses",
+    firstName:"kenhinde",
     lastName:"Adeyanju",
+    user_id:"dc4d48b9-d53e-4205-97f5-d116c4e9082a",
     createdAt: new Date(),
     updatedAt: new Date()
   }
@@ -13,26 +14,11 @@ const fields = [
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert("admins",fields)
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
   },
 
   async down (queryInterface, Sequelize) {
     queryInterface.bulkDelete("admins", {
       email:"get@gmail.com"
     })
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
   }
 };

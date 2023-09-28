@@ -3,7 +3,8 @@ require("dotenv").config()
 const bodyParser = require("body-parser")
 const sequelize = require("./config/sequelize")
 const User = require("./models/user")
-const userRoute = require("./users-route/user.route")
+const userRoute = require("./users/user.route")
+const produductRoute = require("./products/product.route")
 
 const PORT = process.env.PORT
 
@@ -11,6 +12,7 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use("/users", userRoute)
+app.use("/products", produductRoute)
 
 app.get("/", (req,res)=>{
   return res.json({

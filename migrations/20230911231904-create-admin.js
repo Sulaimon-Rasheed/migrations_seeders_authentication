@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
         unique:true
       },
-      firstName: {                     //migrations/20230911231904-create-admin.js
+      firstName: {               
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -26,14 +26,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      // userId: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   references:{
-      //     model:"User",
-      //     key:"userId"
-      //   }
-      // },
+      user_id: {
+        type: Sequelize.UUID,
+        references:{
+          model:"users",
+          key:"_id"
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

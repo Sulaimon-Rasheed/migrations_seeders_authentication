@@ -5,7 +5,7 @@ uuidv4();
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Users', {
-      user_id: {
+        _id: {
         unique:true,
         primaryKey: true,
         type: Sequelize.UUID,

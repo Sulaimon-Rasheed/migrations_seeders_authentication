@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Products', {
-      product_id: {
+        _id: {
         unique:true,
         primaryKey: true,
         type: Sequelize.UUID,

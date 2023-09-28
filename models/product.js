@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const Product = sequelize.define(
   "Product",
   {
-    product_id: {
+      _id: {
       unique:true,
       primaryKey: true,
       type: DataTypes.UUID,
@@ -34,56 +34,3 @@ const Product = sequelize.define(
 );
 
 module.exports = Product;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 'use strict';
-// const {
-//   Model
-// } = require('sequelize');
-// module.exports = (sequelize, DataTypes) => {
-//   class Product extends Model {
-//     /**
-//      * Helper method for defining associations.
-//      * This method is not a part of Sequelize lifecycle.
-//      * The `models/index` file will call this method automatically.
-//      */
-//     static associate(models) {
-//       // define association here
-//     }
-//   }
-//   Product.init({
-//     productName: DataTypes.STRING,
-//     description: DataTypes.STRING,
-//     price: DataTypes.INTEGER,
-//     size: DataTypes.INTEGER,
-//     color: DataTypes.STRING,
-//     qoqntityPerUnit: DataTypes.INTEGER
-//   }, {
-//     sequelize,
-//     modelName: 'Product',
-//   });
-//   return Product;
-// };

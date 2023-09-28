@@ -1,6 +1,7 @@
 const {Sequelize, DataTypes} = require("sequelize")
 const sequelize = require("../config/sequelize")
 const { v4: uuidv4 } = require('uuid');
+const User = require("./user")
 
 const Admin = sequelize.define("Admin", {
         admin_id:{
@@ -22,14 +23,13 @@ const Admin = sequelize.define("Admin", {
           type:DataTypes.STRING,
           allowNull: false,
         },
-        // userId: {
-        //   type: Sequelize.INTEGER,
-        //   allowNull: false,
-        //   references:{
-        //     model:"User",
-        //     key:"userId"
-        //   },
-        // },
+        user_id: {
+          type: Sequelize.UUID,
+          references:{
+            model:"users",
+            key:"_id"
+          },
+        },
         createdAt: {
           type: DataTypes.DATE
         },
@@ -44,56 +44,6 @@ const Admin = sequelize.define("Admin", {
  }
  )
 
+ Admin.belongsTo(User, { foreignKey: 'user_id' });
+
  module.exports = Admin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // 'use strict';
-// const {
-//   Model
-// } = require('sequelize');
-// module.exports = (sequelize, DataTypes) => {
-//   class Admin extends Model {
-//     /**
-//      * Helper method for defining associations.
-//      * This method is not a part of Sequelize lifecycle.
-//      * The `models/index` file will call this method automatically.
-//      */
-//     static associate(models) {
-//       // define association here
-//     }
-//   }
-//   Admim.init({
-//     id: DataTypes.INTEGER,
-//     firstName: DataTypes.STRING,
-//     lastName: DataTypes.STRING,
-//     userId: DataTypes.INTEGER
-//   }, {
-//     sequelize,
-//     modelName: 'Admin',
-//   });
-//   return Admin;
-// };
